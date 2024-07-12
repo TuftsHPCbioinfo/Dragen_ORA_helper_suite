@@ -29,7 +29,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            yzhangtufts/dragan_ORA suite
+            yzhangtufts/dragan_ORA_suite
           tags: type=semver,pattern={{version}}
       - name: Build & Publish Docker Image
         uses: docker/build-push-action@v5
