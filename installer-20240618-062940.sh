@@ -113,21 +113,11 @@ echo "== Installing oraFuse libraries =="
 echo ""
 
 if [ $OS = Debian ]; then
-
-    echo "This is only needed for the oraFuse tool, requires sudo access for installation, and you may decide to run it later."
-    echo -e "${BRN}sudo apt update && sudo apt install fuse openssl libcurl3-gnutls${END}"
-    read -p "Should I run this command for you now (Y/n)? " -r
-    echo
-    if [[ ! $REPLY =~ ^[Nn]$ ]]
-    then
-        ( apt update && apt install fuse openssl libcurl3-gnutls ) || true # Don't stop if fail
-    fi
+apt update && apt install -y fuse openssl libcurl3-gnutls ) 
 
 else #if [ $OS = RedHat -o $OS = Amazon ]; then
 
-    echo "This is only needed for the oraFuse tool, requires sudo access for installation, and you may decide to run it later."
-    echo -e "${BRN} yum install fuse fuse-libs libcurl openssl${END}"
-    yum install fuse fuse-libs libcurl openssl 
+yum update && yum install -y fuse fuse-libs libcurl openssl 
 
 fi
 
