@@ -113,7 +113,7 @@ echo "== Installing oraFuse libraries =="
 echo ""
 
 if [ $OS = Debian ]; then
-apt update && apt install -y fuse openssl libcurl3-gnutls ) 
+apt update && apt install -y fuse openssl libcurl3-gnutls
 
 else #if [ $OS = RedHat -o $OS = Amazon ]; then
 
